@@ -1,0 +1,568 @@
+.step-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+}
+
+.step-button {
+  padding: 10px 20px;
+  border: 1px solid #dee2e6;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.step-button:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+.step-button.active {
+  background: linear-gradient(to right, #0d6efd, #0b5ed7);
+  color: white;
+  border-color: #0d6efd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(13, 110, 253, 0.25);
+}
+
+.colleges-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.college-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 130px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.college-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(to right, #0d6efd, #0b5ed7);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.college-card:hover {
+  border-color: #0d6efd;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.college-card:hover::before {
+  opacity: 1;
+}
+
+.college-card.selected {
+  background-color: #e7f1ff;
+  border-color: #0d6efd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.college-card.selected::before {
+  opacity: 1;
+}
+
+.college-icon {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #0d6efd;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7f1ff;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.college-card:hover .college-icon, 
+.college-card.selected .college-icon {
+  transform: scale(1.1);
+  background-color: #d1e7ff;
+}
+
+.college-name {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dee2e6;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-top: none;
+}
+
+.table td {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.fee-form-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.fee-form-section:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #0d6efd, #85c1ff);
+  border-radius: 3px;
+}
+
+.fee-total {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #e7f1ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 0;
+  text-align: right;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.search-container {
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.search-container .input-group {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.search-container .form-control {
+  border-right: none;
+  padding-left: 15px;
+  height: 42px;
+  font-size: 14px;
+}
+
+.search-container .form-control:focus {
+  box-shadow: none;
+  border-color: #86b7fe;
+}
+
+.search-container .btn-primary {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-secondary:disabled {
+  background: #adb5bd;
+}
+
+/* Required field indicator */
+.form-control:placeholder-shown {
+  border-color: #ced4da;
+  background-color: #f8f9fa;
+}
+
+.form-control:focus:placeholder-shown {
+  background-color: white;
+  border-color: #86b7fe;
+}
+
+/* Tooltip for disabled button */
+[title] {
+  position: relative;
+}
+
+[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Empty field indicator */
+.empty-field {
+  border-color: #ffc107 !important;
+}
+
+/* Shimmer effect for empty fields */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Add Fee Detail button styling */
+.add-fee-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.add-fee-btn i, 
+.add-fee-btn svg {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.add-fee-btn:hover:not(:disabled) i,
+.add-fee-btn:hover:not(:disabled) svg {
+  transform: rotate(90deg);
+}
+
+.add-fee-btn:disabled {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+  color: #adb5bd;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.add-fee-btn:not(:disabled) {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+/* Validation Alert */
+.alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+  color: #664d03;
+  border-radius: 8px;
+  animation: fadeInDown 0.3s ease-in-out;
+}
+
+.alert-dismissible {
+  position: relative;
+  padding-right: 3rem;
+}
+
+.btn-close {
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  opacity: .4;
+  border: 0;
+  padding: .75rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  opacity: .7;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fee-creation-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-title-area {
+  background-color: #f8f9fa;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.page-title-area h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.breadcrumb {
+  margin: 5px 0 0;
+  padding: 0;
+  font-size: 14px;
+  background: transparent;
+}
+
+.breadcrumb-item {
+  color: #6c757d;
+}
+
+.breadcrumb-item.active {
+  color: #0d6efd;
+}
+
+.fee-main-content {
+  padding: 20px 24px;
+}
+
+.custom-card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.steps-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.form-select, .form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.form-select:focus, .form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.input-group-text {
+  font-size: 14px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.fee-summary {
+  margin-top: 20px;
+}
+
+.total-fee {
+  text-align: right;
+}
+
+.total-label {
+  font-weight: 500;
+  margin-right: 8px;
+  color: #495057;
+}
+
+.total-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0d6efd;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+
+.btn-light:hover {
+  background-color: #e9ecef;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.add-fee-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+
+.add-fee-btn:hover:not(:disabled) {
+  background-color: #e9ecef;
+}
+
+@media (max-width: 768px) {
+  .card-body {
+    padding: 16px;
+  }
+  
+  .college-card {
+    width: 120px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+  }
+}
+
+/* Empty field indicator enhanced */
+.empty-field {
+  border-color: #dc3545 !important;
+  background-color: #fff8f8 !important;
+}
+
+.is-invalid:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+} 
